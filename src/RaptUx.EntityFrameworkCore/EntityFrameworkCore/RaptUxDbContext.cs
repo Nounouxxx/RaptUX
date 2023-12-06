@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RaptUx.Entities.ChallengeAggregate;
+using RaptUx.Entities.TagAggregate;
+using RaptUx.Entities.UserAggregate;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -47,6 +50,10 @@ public class RaptUxDbContext :
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
 
+    public DbSet<User> CustomUsers { get; set; }
+    public DbSet<Challenge> Challenges { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+
     // Tenant Management
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
@@ -63,8 +70,6 @@ public class RaptUxDbContext :
     {
         base.OnModelCreating(builder);
 
-        /* Include modules to your migration db context */
-
         builder.ConfigurePermissionManagement();
         builder.ConfigureSettingManagement();
         builder.ConfigureBackgroundJobs();
@@ -74,13 +79,26 @@ public class RaptUxDbContext :
         builder.ConfigureFeatureManagement();
         builder.ConfigureTenantManagement();
 
-        /* Configure your own tables/entities inside here */
+        builder.Entity<User>(b =>
+        {
+            b.ToTable(AbpIdentityDbProperties.DbTablePrefix + nameof(Users), AbpIdentityDbProperties.DbSchema);
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(RaptUxConsts.DbTablePrefix + "YourEntities", RaptUxConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+            b.HasMany(u => u.Challenges).WithMany(c => c.Users);
+            b.HasMany(u => u.Tags).WithMany(c => c.Users);
+        });
+        
+        builder.Entity<Challenge>(b =>
+        {
+            b.ToTable(AbpIdentityDbProperties.DbTablePrefix + nameof(Challenges), AbpIdentityDbProperties.DbSchema);
+
+            b.HasMany(c => c.Users).WithMany(u => u.Challenges);
+        });
+        
+        builder.Entity<Tag>(b =>
+        {
+            b.ToTable(AbpIdentityDbProperties.DbTablePrefix + nameof(Tags), AbpIdentityDbProperties.DbSchema);
+
+            b.HasMany(t => t.Users).WithMany(u => u.Tags);
+        });
     }
 }
