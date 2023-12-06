@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  SqlServer:
+    container_name: SqlServer
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      - MSSQL_USER=sa
+      - MSSQL_SA_PASSWORD=2C6A9EE7-FE9E-4A79-BD4C-80C8C484B149
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+  RedisServer:
+    container_name: RedisServer
+    image: redis:latest
+    ports:
+      - "6379:6379"
