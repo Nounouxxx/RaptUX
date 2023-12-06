@@ -14,13 +14,13 @@ public static class RaptUxEfCoreEntityExtensionMappings
         RaptUxGlobalFeatureConfigurator.Configure();
         RaptUxModuleExtensionConfigurator.Configure();
 
-        OneTimeRunner.Run(() =>
+        /*OneTimeRunner.Run(() =>
         {
             ObjectExtensionManager.Instance
                 .MapEfCoreProperty<IdentityUser, string>(
                     "MyProperty",
                     (entityBuilder, propertyBuilder) => { propertyBuilder.HasMaxLength(128); }
                 );
-        });
+        });*/
     }
 }

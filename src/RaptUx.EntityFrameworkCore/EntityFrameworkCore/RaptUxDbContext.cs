@@ -89,14 +89,14 @@ public class RaptUxDbContext :
         
         builder.Entity<Challenge>(b =>
         {
-            b.ToTable(AbpIdentityDbProperties.DbTablePrefix + nameof(Challenges), AbpIdentityDbProperties.DbSchema);
+            b.ToTable(nameof(Challenges), AbpIdentityDbProperties.DbSchema);
 
             b.HasMany(c => c.Users).WithMany(u => u.Challenges);
         });
         
         builder.Entity<Tag>(b =>
         {
-            b.ToTable(AbpIdentityDbProperties.DbTablePrefix + nameof(Tags), AbpIdentityDbProperties.DbSchema);
+            b.ToTable(nameof(Tags), AbpIdentityDbProperties.DbSchema);
 
             b.HasMany(t => t.Users).WithMany(u => u.Tags);
         });

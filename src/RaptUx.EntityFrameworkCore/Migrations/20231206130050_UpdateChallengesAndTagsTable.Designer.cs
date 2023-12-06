@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RaptUx.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace RaptUx.Migrations
 {
     [DbContext(typeof(RaptUxDbContext))]
-    partial class RaptUxDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231206130050_UpdateChallengesAndTagsTable")]
+    partial class UpdateChallengesAndTagsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +59,7 @@ namespace RaptUx.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Challenges", (string)null);
+                    b.ToTable("AbpChallenges", (string)null);
                 });
 
             modelBuilder.Entity("RaptUx.Entities.TagAggregate.Tag", b =>
@@ -72,7 +75,7 @@ namespace RaptUx.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags", (string)null);
+                    b.ToTable("AbpTags", (string)null);
                 });
 
             modelBuilder.Entity("TagUser", b =>
