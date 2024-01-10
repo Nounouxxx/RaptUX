@@ -50,6 +50,28 @@ public class RaptUxMenuContributor : IMenuContributor
                 order: 0
             )
         );
+        
+        context.Menu.Items.Insert(
+            1,
+            new ApplicationMenuItem(
+                RaptUxMenus.Profile,
+                l["Menu:Challenges"],
+                "/challenges",
+                icon: "fas fa-rocket",
+                order: 1
+            )
+        );
+        
+        context.Menu.Items.Insert(
+            2,
+            new ApplicationMenuItem(
+                RaptUxMenus.Profile,
+                l["Menu:Profile"],
+                "/my-profile",
+                icon: "fas fa-user",
+                order: 2
+            ).RequireAuthenticated()
+        );
 
         if (MultiTenancyConsts.IsEnabled)
         {

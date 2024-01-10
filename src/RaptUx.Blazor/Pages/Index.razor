@@ -1,177 +1,127 @@
 ﻿@page "/"
-@using Volo.Abp.MultiTenancy
 @inherits RaptUxComponentBase
 @inject AuthenticationStateProvider AuthenticationStateProvider
-<div class="container">
-    <div class="p-5 text-center">
-        <Badge Color="Color.Success" class="mb-4">
-            <h5 class="m-1"> <i class="fas fa-rocket"></i> Congratulations, <strong>RaptUx</strong> is successfully running!</h5>
-        </Badge>
 
-        <h1>Welcome to the Application</h1>
+<title>Home</title>
 
-        <p class="lead px-lg-5 mx-lg-5">@L["LongWelcomeMessage"]</p>
-
-        @if (!CurrentUser.IsAuthenticated)
-        {
-            <a class="btn btn-primary" href="/Account/Login"><i class="fa fa-sign-in"></i> @L["Login"]</a>
-        }
+<div class="dashboard">
+    <div class="Frame2" style="width: 1211px; height: 72px; position: relative; background: #F0F0F0; border-bottom: 1px #B7B7B7 solid">
+        <div class="Home" style="left: 24px; top: 14px; position: absolute; color: black; font-size: 36px; font-family: Inter; font-weight: 700; word-wrap: break-word">Home</div>
+        <div class="Frame5" style="left: 665px; top: 8px; position: absolute"></div>
+        <div class="Frame4" style="width: 218px; height: 43px; left: 883px; top: 15px; position: absolute; background: white; border-radius: 50px"></div>
     </div>
-
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-auto text-center">
-                    <img src="https://abp.io/assets/png/mastering-abp-framework.webp" style="max-width: 400px;" class="w-100 mb-5 my-md-3">
+    @if (CurrentUser.IsAuthenticated)
+    {
+        <div class="Frame3" style="width: 1093px; height: 342px; position: relative; background: white; border-radius: 25px; overflow: hidden">
+            <div class="WelcomeLoremIpsum" style="left: 52px; top: 36px; position: absolute; color: black; font-size: 35px; font-family: Inter; font-weight: 700; word-wrap: break-word">Welcome, <br/>@(CurrentUser.UserName)</div>
+            <div class="Group1" style="width: 70.79px; height: 70.79px; left: 897px; top: 49px; position: absolute">
+                <div class="Ellipse1" style="width: 70.79px; height: 70.79px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9999px; border: 4px black solid"></div>
+                <div class="BBDino" style="width: 37.25px; height: 38.72px; left: 18.08px; top: 14.99px; position: absolute">
+                    <div class="Vector4" style="width: 22.34px; height: 17.39px; left: 6.49px; top: 21.33px; position: absolute; border: 2px black solid"></div>
+                    <div class="Vector6" style="width: 37.25px; height: 17px; left: -0px; top: 20.40px; position: absolute; border: 2px black solid"></div>
+                    <div class="Vector7" style="width: 22.26px; height: 21.95px; left: 6.26px; top: 0px; position: absolute; border: 2px black solid"></div>
+                    <div class="Vector8" style="width: 16px; height: 11.05px; left: 9.89px; top: 6.34px; position: absolute; border: 2px black solid"></div>
+                    <div class="Vector5" style="width: 1.47px; height: 5.80px; left: 21.33px; top: 24.11px; position: absolute; border: 2px black solid"></div>
                 </div>
-                <div class="col-md d-flex align-items-center">
-                    <div class="pe-0 pe-md-4">
-                        <small class="text-uppercase text-muted">THE OFFICIAL GUIDE</small>
-                        <h2 class="mb-4">Mastering ABP Framework</h2>
-                        <p class="mb-4">Written by the creator of the ABP Framework, this book will help you gain a complete understanding of the framework and modern web application development techniques.</p>
-                        <div class="mb-4">
-                            <a href="https://www.amazon.com/gp/product/B097Z2DM8Q/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i0" class="btn btn-success mb-1">
-                                Buy on Amazon US
-                            </a>
-                            <a href="https://www.packtpub.com/product/mastering-abp-framework/9781801079242" class="btn btn-primary mb-1">
-                                Buy on PACKT
-                            </a>
-                        </div>
+            </div>
+            <div class="TonBadge" style="left: 892px; top: 17px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">ton badge</div>
+            <div class="Frame26" style="width: 950px; left: 64px; top: 186px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 94px; display: inline-flex">
+                <div class="Frame23" style="height: 41px; justify-content: flex-start; align-items: flex-start; gap: 67px; display: flex">
+                    <div class="Frame19" style="height: 41px; padding-top: 11px; padding-bottom: 11px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: center; align-items: center; display: flex">
+                        <div class="VoirSonProfil" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">voir son profil</div>
+                    </div>
+                </div>
+                <div class="Frame24" style="height: 41px; justify-content: flex-start; align-items: flex-start; gap: 67px; display: flex">
+                    <div class="Frame19" style="height: 41px; padding-top: 11px; padding-bottom: 11px; padding-left: 147px; padding-right: 146px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: center; align-items: center; display: flex">
+                        <div class="TerminerSonDFi" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">terminer son défi</div>
+                    </div>
+                </div>
+                <div class="Frame22" style="height: 41px; padding-top: 9px; padding-bottom: 13px; padding-left: 169px; padding-right: 158px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: flex-end; align-items: center; display: flex">
+                    <div class="LoremIpsum" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Lorem Ipsum</div>
+                </div>
+                <div class="Frame25" style="height: 41px; padding-top: 11px; padding-bottom: 11px; padding-left: 169px; padding-right: 158px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: flex-end; align-items: center; display: flex">
+                    <div class="LoremIpsum" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Lorem Ipsum</div>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="Frame3" style="width: 1093px; height: 342px; position: relative; background: white; border-radius: 25px; overflow: hidden">
+        <div class="RapTUxCEstQuoi" style="left: 52px; top: 36px; position: absolute; color: black; font-size: 35px; font-family: Inter; font-weight: 700; word-wrap: break-word">Rap’t UX c’est quoi ?</div>
+        <div class="Frame26" style="width: 950px; left: 52px; top: 235px; position: absolute; justify-content: flex-start; align-items: flex-start; gap: 94px; display: inline-flex">
+            <div class="Frame22" style="height: 41px; padding-top: 9px; padding-bottom: 13px; padding-left: 169px; padding-right: 158px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: flex-end; align-items: center; display: flex">
+                <div class="LoremIpsum" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Lorem Ipsum</div>
+            </div>
+            <div class="Frame24" style="height: 41px; justify-content: flex-start; align-items: flex-start; gap: 67px; display: flex">
+                <div class="Frame19" style="height: 41px; padding-top: 11px; padding-bottom: 11px; padding-left: 147px; padding-right: 146px; background: white; border-radius: 20px; overflow: hidden; border: 1px #8F8D8D solid; justify-content: center; align-items: center; display: flex">
+                    <div class="TerminerSonDFi" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">terminer son défi</div>
+                </div>
+            </div>
+        </div>
+        <div class="LoremIpsumDolorSitAmetConsecteturIaculisVelEstInterdumCursusVitaePellentesqueVolutpatFaucibusMagnaNetusCursusHacIdUltricesQuamPraesentEtLacusNullaEtSemperQuamVelPurusQuamInterdumMassaNislIdUllamcorperArcuNullamCurabiturAliquamOrnareLectusSitEgetNequeAugueRidiculusAdipiscingFeugiatInFaucibusNonIpsumVariusMassaMassaDiamMassa" style="width: 986px; height: 336px; left: 52px; top: 91px; position: absolute; text-align: justify; color: black; font-size: 20px; font-family: Inter; font-weight: 300; word-wrap: break-word">Lorem ipsum dolor sit amet consectetur. Iaculis vel est interdum cursus. Vitae pellentesque volutpat faucibus magna netus cursus hac id ultrices. Quam praesent et lacus nulla et. Semper quam vel purus quam interdum. Massa nisl id ullamcorper arcu nullam curabitur aliquam ornare lectus. Sit eget neque augue ridiculus adipiscing feugiat in. Faucibus non ipsum varius massa massa diam massa. </div>
+    </div>
+    <div class="LesDFis" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Les défis</div>
+    <div class="LesRessources" style="color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Les ressources</div>
+    <div class="Frame29" style="width: 1057px; height: 1375px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 114px; display: inline-flex">
+        <div class="Frame13" style="justify-content: flex-start; align-items: flex-start; gap: 143px; display: inline-flex">
+            <div class="Frame10" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                <div style="left: 120px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">1</div>
+                <div class="LoremIpsum" style="left: 140px; top: 243px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+            </div>
+            <div class="Frame11" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">2</div>
+                <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+            </div>
+            <div class="Frame12" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">3</div>
+                <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+            </div>
+        </div>
+        <div class="Frame28" style="width: 1057px; flex-direction: column; justify-content: space-between; align-items: flex-start; display: flex">
+            <div class="Frame13" style="justify-content: flex-start; align-items: flex-start; gap: 143px; display: inline-flex">
+                <div class="Frame10" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                    <div style="left: 120px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">1</div>
+                    <div class="LoremIpsum" style="left: 140px; top: 243px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                </div>
+                <div class="Frame11" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                    <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">2</div>
+                    <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                </div>
+                <div class="Frame12" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                    <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">3</div>
+                    <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                </div>
+            </div>
+            <div class="LesRecommandationsEtOutils" style="width: 242px; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Les recommandations et outils</div>
+            <div class="Frame27" style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 29px; display: flex">
+                <div class="Frame19" style="justify-content: flex-start; align-items: flex-start; gap: 143px; display: inline-flex">
+                    <div class="Frame10" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 120px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">1</div>
+                        <div class="LoremIpsum" style="left: 140px; top: 243px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                    </div>
+                    <div class="Frame11" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">2</div>
+                        <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                    </div>
+                    <div class="Frame12" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">3</div>
+                        <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                    </div>
+                </div>
+                <div class="Frame20" style="justify-content: flex-start; align-items: flex-start; gap: 143px; display: inline-flex">
+                    <div class="Frame10" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 120px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">1</div>
+                        <div class="LoremIpsum" style="left: 140px; top: 243px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                    </div>
+                    <div class="Frame11" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">2</div>
+                        <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
+                    </div>
+                    <div class="Frame12" style="width: 257px; height: 276px; position: relative; background: white; border-radius: 20px; overflow: hidden">
+                        <div style="left: 129px; top: 119px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">3</div>
+                        <div class="LoremIpsum" style="left: 145px; top: 248px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 700; text-decoration: underline; word-wrap: break-word">Lorem Ipsum</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="my-3 text-center">
-        <h3>Let's improve your application!</h3>
-        <p>Here are some links to help you get started:</p>
-    </div>
-
-    <div class="card mt-4 mb-5">
-        <div class="card-body">
-            <div class="row text-center justify-content-md-center">
-                <div class="col-lg-4">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fas fa-book text-secondary d-block my-3 fa-2x"></i> Learn the ABP Framework</h5>
-                        <p>Explore the compherensive documentation to learn how to build a modern web application.</p>
-                        <a href="https://docs.abp.io/en/abp/latest?ref=tmpl" target="_blank" class="btn btn-link px-1">See Documents <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 border-start">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fas fa-cubes text-secondary d-block my-3 fa-2x"></i> Samples</h5>
-                        <p>See the example projects built with the ABP Framework.</p>
-                        <a href="https://docs.abp.io/en/abp/latest/Samples/Index?ref=tmpl" target="_blank" class="btn btn-link px-1">All samples <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 border-start">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fas fa-users text-secondary d-block my-3 fa-2x"></i> ABP Community</h5>
-                        <p>Get involved with a vibrant community and become a contributor.</p>
-                        <a href="https://community.abp.io/" target="_blank" class="btn btn-link px-1">Community <i class="fas fa-chevron-right"></i></a>
-                        <a href="https://docs.abp.io/en/abp/latest/Contribution/Index?ref=tmpl" target="_blank" class="btn btn-link px-1">Contribute <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-center mt-lg-3 justify-content-md-center">
-                <div class="col-lg-4">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fas fa-pen-nib text-secondary d-block my-3 fa-2x"></i> ABP Blog</h5>
-                        <p>Take a look at our recently published articles.</p>
-                        <a href="https://blog.abp.io/abp?ref=tmpl" target="_blank" class="btn btn-link px-1">See Blog <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 border-start">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fab fa-github text-secondary d-block my-3 fa-2x"></i> Github</h5>
-                        <p>Do you love the ABP Framework? Please <strong>give a star</strong> to support it!</p>
-
-                        <a href="https://github.com/abpframework/abp/" target="_blank" class="btn btn-link px-1">See Open Source Framework <i class="fas fa-chevron-right"></i></a>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 border-start">
-                    <div class="p-4">
-                        <h5 class="mb-3"><i class="fab fa-stack-overflow text-secondary d-block my-3 fa-2x"></i> Stackoverflow</h5>
-                        <p>See answers to previously asked questions or ask a new one.</p>
-                        <a href="https://stackoverflow.com/questions/tagged/abp" target="_blank" class="btn btn-link px-1">Questions <i class="fas fa-chevron-right"></i></a>
-                        <a href="https://stackoverflow.com/questions/ask" target="_blank" class="btn btn-link px-1">Ask a Question <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mt-5 my-3 text-center">
-        <h3>Meet the ABP Commercial</h3>
-        <p>A Complete Web Application Platform Built on the ABP Framework</p>
-    </div>
-
-    <div class="card mt-4 mb-5">
-        <div class="card-body">
-            <p class="px-lg-5 mx-lg-5 py-3 text-center">
-                <a href="https://commercial.abp.io/" target="_blank">ABP Commercial</a> is a platform based on the open source ABP framework. It provides pre-built application modules,
-                rapid application development tooling, professional UI themes, premium support and more.
-            </p>
-
-            <div class="row text-center justify-content-md-center">
-                <div class="col-lg-2">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Startup Templates
-                            <a href="https://commercial.abp.io/startup-templates?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 border-start">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Application Modules
-                            <a href="https://commercial.abp.io/modules?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 border-start">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Developer<br />Tools
-                            <a href="https://commercial.abp.io/tools?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 border-start">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> UI<br /> Themes
-                            <a href="https://commercial.abp.io/themes?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 border-start">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Premium Support
-                            <a href="https://support.abp.io/QA/Questions?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 border-start">
-                    <div class="p-3">
-                        <h6>
-                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Additional Services
-                            <a href="https://commercial.abp.io/additional-services?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mb-5 text-center">
-        <p class="align-middle">
-            <a href="https://twitter.com/abpframework" target="_blank" class="mx-2"><i class="fab fa-twitter"></i><span class="text-secondary"> Abp Framework</span></a>
-            <a href="https://twitter.com/abpcommercial" target="_blank" class="mx-2"><i class="fab fa-twitter"></i><span class="text-secondary"> Abp Commercial</span></a>
-            <a href="https://github.com/abpframework/abp" target="_blank" class="mx-2"><i class="fab fa-github"></i><span class="text-secondary"> abpframework</span></a>
-        </p>
     </div>
 </div>
