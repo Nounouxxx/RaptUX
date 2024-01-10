@@ -54,7 +54,7 @@ public class RaptUxMenuContributor : IMenuContributor
         context.Menu.Items.Insert(
             1,
             new ApplicationMenuItem(
-                RaptUxMenus.Profile,
+                RaptUxMenus.Challenges,
                 l["Menu:Challenges"],
                 "/challenges",
                 icon: "fas fa-rocket",

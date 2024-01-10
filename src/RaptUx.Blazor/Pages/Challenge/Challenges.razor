@@ -1,7 +1,18 @@
 @page "/challenges"
-@inject NavigationManager Navigation;
+@inject NavigationManager Navigation
+@using BreadcrumbItem = Volo.Abp.BlazoriseUI.BreadcrumbItem
+@using Volo.Abp.AspNetCore.Components.Web.Theming.Layout
+@inject PageLayout PageLayout
 
-<div class="challenges">
+@{
+    PageLayout.BreadcrumbItems.Add(new BreadcrumbItem("Challenges", "/challenges")); 
+}
+
+<title>RaptUx - Challenges</title>
+
+<div class="container challenges">
+  <h1>Challenges</h1>
+  
   <div class="Frame3" style="width: 1093px; height: 1088px; position: relative; background: white; border-radius: 25px; overflow: hidden">
     <div class="CommenOns" style="left: 52px; top: 36px; position: absolute; color: black; font-size: 35px; font-family: Inter; font-weight: 700; word-wrap: break-word">Commençons,</div>
     <div class="Group1" style="width: 70.79px; height: 70.79px; left: 897px; top: 49px; position: absolute">

@@ -60,4 +60,13 @@
 
 
 
+
+
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Components\Breadcrumbs\Breadcrumbs.razor" />
+    <_ContentIncludedByDefault Remove="Components\Breadcrumbs\CustomBreadcrumbs.razor" />
+  </ItemGroup>
+
+
 </Project>
