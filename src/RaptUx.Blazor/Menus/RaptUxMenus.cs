@@ -4,6 +4,8 @@ public class RaptUxMenus
 {
     private const string Prefix = "RaptUx";
     public const string Home = Prefix + ".Home";
+    public const string Profile = Prefix + ".Profile";
+    public const string Challenges = Prefix + ".Challenges";
 
     //Add your menu items here...
 
